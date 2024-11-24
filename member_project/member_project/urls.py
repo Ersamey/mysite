@@ -29,4 +29,5 @@ urlpatterns = [
     # path('blog/', blog_views.index),
     path('contact/', contact_views.index),
     path('admin/', admin.site.urls),
+    path('register/', register),
 ]

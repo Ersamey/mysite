@@ -6,3 +6,6 @@ def index(request):
 
 def about(request):
     return HttpResponse('About us')
+
+def register(request):
+    return render(request, 'regster.html')
