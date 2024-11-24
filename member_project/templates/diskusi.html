@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Diskusi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #1a73e8;
+            margin-bottom: 10px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .discussion-list {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .discussion-item {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+            transition: background-color 0.2s;
+        }
+
+        .discussion-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .discussion-item:last-child {
+            border-bottom: none;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #1a73e8;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .discussion-content {
+            flex: 1;
+        }
+
+        .discussion-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .author {
+            font-weight: bold;
+            color: #1a73e8;
+        }
+
+        .date {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .title {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .preview {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .new-discussion {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #1a73e8;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(26,115,232,0.4);
+            transition: transform 0.2s;
+        }
+
+        .new-discussion:hover {
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .discussion-item {
+                padding: 15px;
+            }
+
+            .avatar {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Forum Diskusi</h1>
+            <input type="text" class="search-bar" placeholder="Cari topik diskusi...">
+        </div>
+
+        <div class="discussion-list">
+            <div class="discussion-item">
+                <div class="avatar">AS</div>
+                <div class="discussion-content">
+                    <div class="discussion-header">
+                        <span class="author">Andi Saputra</span>
+                        <span class="date">Baru saja</span>
+                    </div>
+                    <div class="title">Tips Belajar Programming untuk Pemula</div>
+                    <div class="preview">Halo teman-teman! Saya ingin berbagi pengalaman saya dalam belajar programming dari nol. Berikut adalah beberapa tips yang saya rasa sangat membantu dalam perjalanan belajar saya...</div>
+                    <div class="stats">
+                        <span>👍 24 suka</span>
+                        <span>💬 12 komentar</span>
+                        <span>👁️ 156 dilihat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="discussion-item">
+                <div class="avatar">RD</div>
+                <div class="discussion-content">
+                    <div class="discussion-header">
+                        <span class="author">Rini Dewi</span>
+                        <span class="date">2 jam yang lalu</span>
+                    </div>
+                    <div class="title">Perbandingan Framework Frontend Terpopuler 2024</div>
+                    <div class="preview">Dalam artikel ini, saya akan membandingkan beberapa framework frontend populer seperti React, Vue, dan Angular. Mari kita bahas kelebihan dan kekurangan masing-masing...</div>
+                    <div class="stats">
+                        <span>👍 45 suka</span>
+                        <span>💬 28 komentar</span>
+                        <span>👁️ 312 dilihat</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="discussion-item">
+                <div class="avatar">BP</div>
+                <div class="discussion-content">
+                    <div class="discussion-header">
+                        <span class="author">Budi Pratama</span>
+                        <span class="date">5 jam yang lalu</span>
+                    </div>
+                    <div class="title">Pengalaman Kerja Remote sebagai Developer</div>
+                    <div class="preview">Sudah 2 tahun saya bekerja sebagai remote developer. Ada banyak hal menarik yang bisa saya bagikan tentang pengalaman ini. Mulai dari cara mengatur waktu...</div>
+                    <div class="stats">
+                        <span>👍 67 suka</span>
+                        <span>💬 34 komentar</span>
+                        <span>👁️ 489 dilihat</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="new-discussion">+ Buat Diskusi Baru</button>
+</body>
+</html>

@@ -21,6 +21,7 @@ from django.urls import path, include
 from . views import *
 # from blog import views as blog_views
 from contact import views as contact_views
+from diskusi import views as diskusi_views
 
 urlpatterns = [
     path('', index),
@@ -30,4 +31,5 @@ urlpatterns = [
     path('contact/', contact_views.index),
     path('admin/', admin.site.urls),
     path('register/', register),
+    path('diskusi/', diskusi_views.index),
 ]
